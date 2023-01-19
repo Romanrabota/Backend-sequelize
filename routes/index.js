@@ -6,8 +6,8 @@ const router = Router();
 
 const PowerController = require('../controllers/Power.controller');
 
-//router.post('/superhero',getPowerInstance,SuperheroController.createSuperhero);
-router.post('/superhero',SuperheroController.createSuperhero);
+router.post('/superhero',getPowerInstance,SuperheroController.createSuperhero);
+//router.post('/superhero',SuperheroController.createSuperhero);
 router.post('/power',PowerController.createPower);  
 router.get('/superheros',SuperheroController.findAll);
 router.get('/superhero/:id',SuperheroController.findOnePK);

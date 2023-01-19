@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       superpowers:{
         field:'superpowers',
-        type:DataTypes.STRING,
+        type:DataTypes.ARRAY(DataTypes.STRING),   
         allowNull:false, validate:{
           notEmpty: true,
           notNull: true 
@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       images:{
         field:'images',
-        type:DataTypes.STRING,
+        type:DataTypes.ARRAY(DataTypes.STRING),  
         allowNull:false, validate:{
           notEmpty: true,
           notNull: true 
