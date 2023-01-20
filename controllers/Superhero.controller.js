@@ -48,8 +48,6 @@ try{
     return res.status(200).send("Successfull delete");
   } else {
      res.status(204).send();
-
-
   }
 
 } catch (error) {

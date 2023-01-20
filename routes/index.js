@@ -1,6 +1,6 @@
 const {Router} = require ('express');
 const SuperheroController = require('../controllers/Superhero.controller');
-const {getPowerInstance} =  require('../middlewares/Power.mw');
+const {getPowerInstance} = require('../middlewares/Power.mw');
 const router = Router();
 //router.get('/user');
 

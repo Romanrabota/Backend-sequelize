@@ -12,3 +12,12 @@ try{
 }
 }
 
+module.exports.findAll = async (req,res,next) =>
+{
+try{
+    const results = await Power.findAll();
+    return res.status(200).send(results);
+}  catch (error) {
+   next(error)
+}
+}

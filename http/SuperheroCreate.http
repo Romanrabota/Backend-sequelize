@@ -5,7 +5,7 @@ Content-Type: application/json
    "nickname":"Superman4",
    "realname":"Clark Kent",
    "origin_description":"description",
-   "superpowers":"fly",
+   "superpowers":"microscopic vision",
    "cath_phrase":"phrase",
    "images":"image" 
 }

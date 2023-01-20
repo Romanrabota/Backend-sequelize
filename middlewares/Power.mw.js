@@ -1,6 +1,7 @@
 const {Power} = require('../models');
 const {Superhero} = require('../models');
 
+
 /*module.exports.getPowerInstance = async(req,res,next)=>{
 try{
   
@@ -89,9 +90,9 @@ module.exports.getPowerInstance = async(req,res,next)=>{
     superheropower=body.superpowers;
     console.log("superheropower:",superheropower);
     const powerstable = await Power.findAll();
-      
+    
   
-    console.log(powerstable);    
+    //console.log(powerstable);    
   }
   catch(error){
     next(error);
