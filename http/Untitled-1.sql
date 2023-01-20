@@ -9,7 +9,7 @@ VALUES (
   );
 
 
-  /*INSERT INTO users4 VALUES ('Test','Testovich','mail', 'female',true,'1990-01-20',0,-1);*/
+
 
 
 
