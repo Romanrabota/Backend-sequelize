@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Power.init({
     power:{
+      field:'power',
       type:DataTypes.STRING,
       allowNull:false,
       validate:{
@@ -38,7 +39,9 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName: 'Power',
-    tableName: 'powers'
+    tableName: 'powers',
+    underscored:true
+
   });
   return Power;
 };

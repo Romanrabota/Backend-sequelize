@@ -12,6 +12,7 @@ module.exports = {
       },
       nickname: {
         allowNull:false,
+        unique:true,
         type: Sequelize.STRING
       },
       real_name: {
@@ -42,12 +43,14 @@ module.exports = {
         createdAt: {
         field:'created_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       },
       updatedAt: {
         field:'updated_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       }
     });
   },

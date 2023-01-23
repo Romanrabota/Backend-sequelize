@@ -1,7 +1,10 @@
-PUT http://localhost:3000/api/superhero/8 HTTP/1.1 
+PUT http://localhost:3000/api/superhero/1 HTTP/1.1 
 Content-Type: application/json
 
 {
     "nickname":"Superman5",
-    "realname":"name"
+    "realname":"name",
+    "superpowers":"superpower5d",
+    "images":"image5e" 
+
 }

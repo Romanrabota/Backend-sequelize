@@ -11,13 +11,39 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+     /*  Image.belongsTo(models.Superhero,{
+        foreignKey:'id'
+       })*/
     }
   }
   Image.init({
-    image: DataTypes.STRING
-  }, {
+    image:{
+    field:'image',
+    type: DataTypes.STRING,
+    allowNull:false,
+    validate:{
+    notEmpty: true,
+    notNull: true,
+    min:1,
+    max:200 
+    }
+  },
+  nickname:{
+    type:DataTypes.STRING,
+    allowNull:false,
+    validate:{
+    notEmpty: true,
+    notNull: true,
+    min:1,
+    max:200 
+    }
+}
+}, 
+  {
     sequelize,
     modelName: 'Image',
+    tableName: 'images',
+    underscored:true
   });
   return Image;
 };

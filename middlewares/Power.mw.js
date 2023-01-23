@@ -2,87 +2,52 @@ const {Power} = require('../models');
 const {Superhero} = require('../models');
 
 
-/*module.exports.getPowerInstance = async(req,res,next)=>{
+module.exports.getPowerInstance = async(req,res,next)=>{
 try{
-  
-  const {body} = req;
-  console.log(body);
-  nickname =body.nickname;
-  powerofhero=body.power; 
-  const [powers, created] = await Power.findOrCreate({
-    where: { nickname:nickname},
-    defaults: {
-      powers: powerofhero
-    }
-  });  
-  console.log(powers);
- //req.powersInstance = powers;
- //req.power = powers;
+  const superheropower = req.body;
+  console.log("superheropower:",superheropower);
+  const powerstable = await Power.findOne({ where: { power: superheropower.superpowers } });  
 
-} catch(error){
-    next(error);
-}
-}
+  console.log("powerstable:",powerstable);
 
-*/
-
-/*module.exports.getPowerInstance = async(req,res,next)=>{
-try{
-  
-  const {body:{superpowers}} = req;
-  console.log("superpowers",superpowers); 
-  const [powerohhero, created] = await Power.findOrCreate({
-    where: {power:`${superpowers}`},
-    defaults: {
-      power:`${superpowers}`
-    }
-  });  
-  console.log(powerohhero);
- //req.powersInstance = powers;
- //req.power = powers;
-
-} catch(error){
-    next(error);
-}
-}
-
-*/
-
-
-
-
-
-
-
-/*module.exports.getPowerInstance = async(req,res,next)=>{
-try{
-  const superheropower = req.superpowers;
-  console.log(superheropower);
-  const powerstable = await Powers.findAll();  
-
-  console.log(powerstable);
-
-  if(!powerstable){
-    Powers.create(superheropower);
-   req.PowerInstance=superheropower;
+  if(powerstable === null){
+    let data={
+      nickname:superheropower.nickname,
+      power:superheropower.superpowers
+     }
+    Power.create(data);
   }
-
-
-  if(Array.isArray(powerstable)){
-  for(let item of powerstable){
-     if(item!=superheropower){  //если нет суперсилы
-      Powers.create(superheropower);
-        req.PowerInstance=superheropower;
+         next();
   }
-}
-}
-}catch(error){
+catch(error){
   next(error);
 }
-}*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 19.01 
-module.exports.getPowerInstance = async(req,res,next)=>{
+/*module.exports.getPowerInstance = async(req,res,next)=>{
   try{
 
     const {body} = req;
@@ -90,18 +55,15 @@ module.exports.getPowerInstance = async(req,res,next)=>{
     superheropower=body.superpowers;
     console.log("superheropower:",superheropower);
     const powerstable = await Power.findAll();
-    
-  
-    //console.log(powerstable);    
+    console.log(powerstable);    
   }
   catch(error){
     next(error);
   }
   }
+  /*
 
 
-
-/*
 module.exports.getPowerInstance = async(req,res,next)=>{
   try{
     const {body:{superpowers}} = req;
@@ -118,7 +80,7 @@ module.exports.getPowerInstance = async(req,res,next)=>{
     } 
     }   
   }
-  catch(error){
+   catch(error){
     next(error);
   }
   }

@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       power: {
+        field:'power',
         type: Sequelize.STRING
       },
       nickname: {
@@ -18,12 +19,14 @@ module.exports = {
       createdAt: {
         field:'created_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       },
       updatedAt: {
         field:'updated_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       }
     });
   },

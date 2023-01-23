@@ -2,12 +2,14 @@ POST http://localhost:3000/api/superhero HTTP/1.1
 Content-Type: application/json
 
 {
-   "nickname":"Superman4",
-   "realname":"Clark Kent",
-   "origin_description":"description",
-   "superpowers":"microscopic vision",
-   "cath_phrase":"phrase",
-   "images":"image" 
+   "nickname":"Superman20",
+   "realname":"Clark Kent20",
+   "origin_description":"description20",
+   "superpowers":"superpower20",
+   "cath_phrase":"phrase20",
+   "images":"image20" 
 }
+
+
 
 

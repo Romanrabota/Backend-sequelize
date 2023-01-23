@@ -8,19 +8,25 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
+      },     
       image: {
+        field:'image',
+        type: Sequelize.STRING
+      },
+      nickname: {
         type: Sequelize.STRING
       },
       createdAt: {
         field:'created_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       },
       updatedAt: {
-        field:'created_at',
+        field:'updated_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        underscored:true
       }
     });
   },

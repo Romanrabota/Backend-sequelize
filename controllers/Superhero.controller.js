@@ -3,8 +3,8 @@ const {Superhero} = require('../models');
 module.exports.createSuperhero = async (req,res,next) =>
 {
 try{
-    const {body} = req;
-    console.log(body);
+    const {body} = req; 
+    console.log("createsuperherobody",body);
     const createSuperhero = await Superhero.create(body);
     return res.status(201).send(createSuperhero);
 } catch (error) {
@@ -16,7 +16,10 @@ try{
 module.exports.findAll = async (req,res,next) =>
 {
 try{
-    const results = await Superhero.findAll();
+   const {pagination} = req;
+    const results = await Superhero.findAll({
+       ...pagination
+});
     return res.status(200).send(results);
 }  catch (error) {
    next(error)
@@ -28,7 +31,7 @@ module.exports.findOnePK = async (req,res,next) =>
 {
 try{
     const {params:{id}} =req;
-    const findSuperhero = await Superhero.findByPK(id);
+    const findSuperhero = await Superhero.findByPk(id);
     return res.status(200).send(findSuperhero);
 } catch (error) {
    next(error)
@@ -68,7 +71,7 @@ module.exports.updateSuperhero = async (req,res,next) => {
     }
    });
 
-return  res.status(200).send();
+return  res.status(200).send("Updated");
  } catch(error){
    next(error); 
  }
